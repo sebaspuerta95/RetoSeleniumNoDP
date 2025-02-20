@@ -16,7 +16,7 @@ public class ClickTest extends TestsBase {
 
         WebElement button = driver.findElement(By.id("badButton"));
         Actions actions = new Actions(driver);
-        actions.moveToElement(button).click().perform();
+        actions.moveToElement(button).click().perform();actions.moveToElement(button).click().perform();
 
         assertEquals("btn btn-success", button.getAttribute("class"), "The class is incorrect.");
 

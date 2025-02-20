@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -17,9 +18,16 @@ public class TestsBase {
     @BeforeEach
     public void setUp(){
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver/chromedriver.exe");
-        driver = new ChromeDriver();
+
+        ChromeOptions options = new ChromeOptions();
+        options.setAcceptInsecureCerts(true);
+        options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--disable-web-security");
+        options.addArguments("--allow-running-insecure-content");
+
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.get("http://www.uitestingplayground.com/home");
+        driver.get("https://www.uitestingplayground.com/home");
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 

@@ -33,7 +33,7 @@ public class TestsBase {
 
     @AfterEach
     public void tearDown(){
-        driver.quit();
+        //driver.quit();
     }
 
     protected void clickLink (String linkText){

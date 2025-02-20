@@ -24,7 +24,7 @@ public class HiddenLayers extends TestsBase {
         greenButton.click();
 
         WebElement blueButton = driver.findElement(bButton);
-        assertTrue(blueButton.isDisplayed(), "El botón azul no está visible después del clic");
+        assertTrue(blueButton.isDisplayed(), "The blue button is not visible after the first click.");
 
         boolean isGreenButtonClickable = false;
         try {
